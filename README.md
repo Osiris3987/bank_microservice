@@ -32,7 +32,7 @@
 ### Client API
 
 - GET /api/v1/client : получение всех клиентов
-- DELETE /api/v1/client : удаление клиента (изменение статуса на deleted)
+- DELETE /api/v1/client/{clientId} : удаление клиента по Id (изменение статуса на deleted)
 - GET /api/v1/client/{clientId} : получение клиента по Id
 - GET /api/v1/client/{clientId}/transactions : получение всех транзакций клиента
 - GET /api/v1/client/{clientId}/legalEntities : получение всех юр лиц клиента
@@ -44,9 +44,10 @@
 - POST /api/v1/auth/refresh : обновление JWT токена
 
 ### Legal Entity API
-
+- GET /api/v1/legalEntity получение всех юрлиц
 - POST /api/v1/legalEntity : создание юрлица
-- DELETE /api/v1/legalEntity : удаление юр лица
+- GET /api/v1/legalEntity/{legalEntityId} : получение юр лица по Id
+- DELETE /api/v1/legalEntity/{legalEntityId} : удаление юр лица по Id (изменение статуса на deleted)
 - POST /api/v1/legalEntity/assign : добавление пользователя в юр лицо
 - GET /api/v1/legalEntity/{legalEntityId}/transactions : получение всех транзакций юр лица
 - GET /api/v1/legalEntity/{legalEntityId}/client : получение всех клиентов юрлица
