@@ -81,7 +81,22 @@
 на ваш порт)
 
 ## Сборка
+### Без Vaadin
+Для сборки приложения необходимо выполнить следующие действия.
 
+1. Склонировать репозиторий:
+
+   ```
+   git clone https://github.com/Osiris3987/hackathon-becoder
+   cd hackathon-becoder
+   git branch main-wo-vaadin
+   ```
+2. Выполнить запуск приложения следующей командой:
+
+   ```
+   docker compose up --build
+   ```
+### Без Vaadin
 Для сборки приложения необходимо выполнить следующие действия.
 
 1. Склонировать репозиторий:
@@ -90,9 +105,15 @@
    git clone https://github.com/Osiris3987/hackathon-becoder
    cd hackathon-becoder
    ```
-2. Выполнить запуск приложения следующей командой:
-
+2. Сборка проекта
    ```
-   docker compose up --build
+   mvn clean package
    ```
-
+4. Запуск образа Docker с БД:
+   ```
+    docker-compose up -d postgres
+   ```
+5. Запуск приложения: 
+   ```
+   java -jar target/hackathon_becoder_backend-0.0.1-SNAPSHOT.jar
+   ```
