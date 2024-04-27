@@ -10,6 +10,7 @@ volumes:
 
 services:
   postgres:
+    container_name: bank-db
     image: 'postgres:15.1-alpine'
     ports:
       - "5436:5432"
@@ -23,7 +24,7 @@ services:
   app:
     build:
       context: .
-    container_name: tasklist
+    container_name: bank
     networks:
       - hackathon_becoder
     depends_on:
